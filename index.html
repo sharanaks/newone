@@ -1,212 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care Guard Solution – Security, Home Nursing & Manpower Agency</title>
 
-<title>Care Guard Solution – Security, Home Nursing & Manpower Agency</title>
-<meta name="description"
-      content="Care Guard Solution provides trained security guards, certified home nurses, caretakers, and manpower staff across Karnataka. Available 24/7.">
+  <meta name="description"
+        content="Care Guard Solution provides trained security guards, certified home nurses, caretakers, and manpower staff across Karnataka. Available 24/7." />
 
-<style>
-/* ---------- BASE ---------- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background:#f7f7f7;
-  line-height: 1.6;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background:#f7f7f7;
+    }
 
-h1,h2,h3 { color:#0b3c5d; }
+    header {
+      background:#0b3c5d;
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
+    }
 
-section {
-  background:#fff;
-  max-width:1000px;
-  margin:20px auto;
-  padding:40px 20px;
-  border-radius:8px;
-}
+    section {
+      padding:40px 20px;
+      background:#fff;
+      margin:20px auto;
+      max-width:1000px;
+      border-radius:8px;
+    }
 
-ul { padding-left:20px; }
+    h1,h2,h3 { color:#0b3c5d; }
 
-/* ---------- NAVBAR ---------- */
-nav {
-  background:#fff;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+    ul { padding-left:20px; }
 
-.nav-container {
-  max-width:1100px;
-  margin:auto;
-  padding:12px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
+    /* SERVICES GRID */
+    .services {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
 
-.nav-links {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:14px;
-  font-weight:bold;
-}
+    .card {
+      background:#f1f5f9;
+      padding:20px;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+    }
 
-.nav-links a {
-  text-decoration:none;
-  color:#0b3c5d;
-  font-size:14px;
-}
+    .card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      object-position: top center;
+      border-radius:8px;
+      margin-bottom:15px;
+    }
 
-.nav-links a.contact {
-  color:#ff9800;
-}
+    footer {
+      background:#0b3c5d;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+    }
 
-/* ---------- HEADER ---------- */
-header {
-  background:#0b3c5d;
-  color:#fff;
-  text-align:center;
-  padding:40px 20px;
-}
+    .btn {
+      display:inline-block;
+      background:#ff9800;
+      color:#fff;
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+    }
 
-header img {
-  width:100%;
-  max-width:900px;
-  border-radius:12px;
-  margin-top:20px;
-}
+    /* NAVBAR */
+    nav {
+      background:#ffffff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
 
-/* ---------- SERVICES ---------- */
-.services {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
+    nav .nav-container {
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 20px;
+    }
 
-.card {
-  background:#f1f5f9;
-  padding:20px;
-  border-radius:10px;
-}
+    nav .nav-links {
+      display:flex;
+      gap:18px;
+      font-weight:bold;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
 
-.card img {
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:8px;
-  margin-bottom:15px;
-}
+    nav a {
+      text-decoration:none;
+      color:#0b3c5d;
+      font-size:14px;
+    }
 
-/* ---------- BUTTON ---------- */
-.btn {
-  display:inline-block;
-  background:#ff9800;
-  color:#fff;
-  padding:10px 20px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    nav a.contact {
+      color:#ff9800;
+    }
 
-/* ---------- FOOTER ---------- */
-footer {
-  background:#0b3c5d;
-  color:#fff;
-  text-align:center;
-  padding:25px 15px 140px;
-}
+    /* MOBILE FIX */
+    @media (max-width: 768px) {
 
-/* ---------- FLOATING BUTTONS (DESKTOP ONLY) ---------- */
-.floating {
-  position:fixed;
-  right:20px;
-  z-index:999;
-  font-weight:bold;
-  text-decoration:none;
-  color:#fff;
-  border-radius:50px;
-  padding:12px 20px;
-}
+      header {
+        padding:25px 15px;
+      }
 
-.whatsapp { bottom:20px; background:#25D366; }
-.call     { bottom:80px; background:#0b3c5d; }
-.direction{ bottom:140px;background:#4285F4; }
+      section {
+        padding:25px 15px;
+        margin:15px 10px;
+      }
 
-/* ---------- MOBILE FIX ---------- */
-@media (max-width:768px) {
+      .services {
+        grid-template-columns:1fr;
+      }
 
-  section { padding:25px 15px; margin:15px 10px; }
+      .card {
+        padding:15px;
+      }
 
-  .services { grid-template-columns:1fr; }
+      .card img {
+        height:160px;
+      }
 
-  .card img { height:160px; }
+      h1 { font-size:24px; }
+      h2 { font-size:20px; }
+      h3 { font-size:18px; }
 
-  h1 { font-size:24px; }
-  h2 { font-size:20px; }
-  h3 { font-size:18px; }
+    }
+  </style>
 
-  /* hide floating buttons on mobile */
-  .floating { display:none; }
-}
-
-/* ---------- MOBILE BOTTOM BAR ---------- */
-.mobile-bar {
-  display:none;
-}
-
-@media (max-width:768px) {
-  .mobile-bar {
-    display:flex;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:#0b3c5d;
-    z-index:1000;
+  <!-- SEO SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Care Guard Solution",
+    "description": "Home nursing, security guard and manpower services in Karnataka",
+    "telephone": "+91XXXXXXXXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Su 00:00-23:59"
   }
-
-  .mobile-bar a {
-    flex:1;
-    text-align:center;
-    padding:14px;
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
-    border-right:1px solid rgba(255,255,255,0.2);
-  }
-
-  .mobile-bar a:last-child {
-    border-right:none;
-  }
-}
-</style>
-
-<!-- SEO SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Care Guard Solution",
-  "description": "Home nursing, security guard and manpower services in Karnataka",
-  "telephone": "+91XXXXXXXXXX",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Karnataka",
-    "addressCountry": "IN"
-  },
-  "openingHours": "Mo-Su 00:00-23:59"
-}
-</script>
+  </script>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
   <div class="nav-container">
     <strong style="font-size:18px;color:#0b3c5d">Care Guard Solution</strong>
@@ -223,72 +180,98 @@ footer {
   </div>
 </nav>
 
-<!-- FLOATING BUTTONS (DESKTOP) -->
-<a href="https://wa.me/919999999999" class="floating whatsapp">WhatsApp</a>
-<a href="tel:+919999999999" class="floating call">Call</a>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919999999999" target="_blank"
+   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
+   padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:999">
+   WhatsApp
+</a>
+
+<a href="tel:+919999999999"
+   style="position:fixed;bottom:80px;right:20px;background:#0b3c5d;color:#fff;
+   padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:999">
+   Call
+</a>
+
 <a href="https://www.google.com/maps/dir/?api=1&destination=Bangalore"
-   target="_blank" class="floating direction">Directions</a>
+   target="_blank"
+   style="position:fixed;bottom:140px;right:20px;background:#4285F4;color:#fff;
+   padding:12px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:999">
+   Directions
+</a>
 
 <!-- HEADER -->
 <header>
   <h1>Care Guard Solution</h1>
   <h3>Security, Home Nursing & Manpower Agency</h3>
-  <p>Trusted Guards, Professional Nurses & Skilled Staff</p>
+  <p>Trusted Guards, Professional Nurses & Skilled Staff for Homes & Businesses</p>
 
   <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80"
-       alt="Care Guard Solution">
+       alt="Care Guard Solution Services"
+       style="width:100%;max-width:900px;border-radius:12px;margin-top:20px">
 
   <br><br>
-  <a href="contact.html" class="btn">Contact Us</a>
+  <a class="btn" href="contact.html">Contact Us</a>
 </header>
 
 <!-- OVERVIEW -->
 <section>
   <h2>Overview</h2>
   <p>
-    <strong>Care Guard Solution</strong> offers professional
-    Home Nursing, Security Guard and Manpower services
-    across Bangalore and Mangalore with 24/7 support.
+    <strong>Care Guard Solution</strong> provides professional
+    <strong>Home Nursing, Security Guard, and Manpower Services</strong>
+    across <strong>Bangalore and Mangalore</strong>.
+  </p>
+  <p>
+    We deliver trained, verified staff with 24/7 support,
+    fast response, and affordable pricing.
   </p>
 </section>
 
-<!-- WHY US -->
+<!-- WHY CHOOSE US -->
 <section>
   <h2>Why Choose Us</h2>
   <ul>
     <li>Trained & Verified Staff</li>
     <li>24/7 Customer Support</li>
-    <li>Affordable Pricing</li>
-    <li>Fast Response</li>
+    <li>Affordable Prices</li>
     <li>Trusted by Families & Businesses</li>
+    <li>Fast Service Response</li>
+    <li>Professional Management</li>
   </ul>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Our Main Services</h2>
+  <h2>Our Main Services</h2>
 
-<div class="services">
+  <div class="services">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=800&q=80">
-    <h3>Security Guard Services</h3>
-    <p>Professional security guards for apartments, banks, hospitals and events.</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=800&q=80"
+           alt="Security Guard Services">
+      <h3>Security Guard Services</h3>
+      <p>Professional male & female guards for apartments, banks,
+         hospitals, events and industries.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=800&q=80"
+           alt="Home Nursing Services">
+      <h3>Home Nurse & Patient Care</h3>
+      <p>Certified nurses and caretakers for elderly, bedridden,
+         post-surgery and ICU home care.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=800&q=80"
+           alt="Manpower Supply Services">
+      <h3>Manpower Supply & Job Assistance</h3>
+      <p>Skilled & unskilled manpower including office staff,
+         helpers, drivers and factory workers.</p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=800&q=80">
-    <h3>Home Nurse & Patient Care</h3>
-    <p>Certified nurses for elderly care, bedridden patients and ICU home care.</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=800&q=80">
-    <h3>Manpower Supply & Job Assistance</h3>
-    <p>Skilled & unskilled manpower including helpers, drivers and office staff.</p>
-  </div>
-
-</div>
 </section>
 
 <!-- FOOTER -->
@@ -296,13 +279,6 @@ footer {
   <p>© 2025 Care Guard Solution – Security, Home Nursing & Manpower Agency</p>
   <p>Trusted Services Across Karnataka | 24/7 Support</p>
 </footer>
-
-<!-- MOBILE BOTTOM BAR -->
-<div class="mobile-bar">
-  <a href="tel:+919999999999">📞 Call</a>
-  <a href="https://wa.me/919999999999">💬 WhatsApp</a>
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Bangalore">📍 Directions</a>
-</div>
 
 </body>
 </html>
