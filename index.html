@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Care Guard Solution – Security, Home Nursing & Manpower Agency</title>
+
 <meta name="description"
       content="Care Guard Solution provides trained security guards, certified home nurses, caretakers, and manpower staff across Karnataka. Available 24/7." />
 
@@ -16,6 +17,7 @@ body {
   background:#f7f7f7;
   line-height: 1.6;
 }
+
 h1,h2,h3 { color:#0b3c5d; }
 
 section {
@@ -26,34 +28,44 @@ section {
   border-radius:8px;
 }
 
+ul { padding-left:20px; }
+
 /* ===== NAVBAR ===== */
 nav {
-  background:#fff;
+  background:#ffffff;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   position:sticky;
   top:0;
   z-index:1000;
 }
+
 .nav-container {
   max-width:1100px;
   margin:auto;
-  padding:12px 20px;
   display:flex;
+  align-items:center;
   justify-content:space-between;
+  padding:12px 20px;
   flex-wrap:wrap;
 }
+
 .nav-links {
   display:flex;
-  gap:16px;
+  gap:18px;
   flex-wrap:wrap;
+  justify-content:center;
+  font-weight:bold;
 }
+
 .nav-links a {
   text-decoration:none;
   color:#0b3c5d;
-  font-weight:bold;
   font-size:14px;
 }
-.nav-links a.contact { color:#ff9800; }
+
+.nav-links a.contact {
+  color:#ff9800;
+}
 
 /* ===== HEADER ===== */
 header {
@@ -63,46 +75,79 @@ header {
   padding:40px 20px;
 }
 
-/* ===== SLIDER ===== */
-.hero-wrapper {
-  position:relative;
-  max-width:900px;
-  height:350px;
-  margin:20px auto;
-  overflow:hidden;
-  border-radius:12px;
-}
-
+/* HERO SLIDER */
 .hero-slider {
-  display:flex;
-  width:100%;
-  height:100%;
-  transition: transform 0.8s ease-in-out;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 350px;
+  margin: 20px auto 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .hero-slider img {
-  width:100%;
-  flex-shrink:0;
-  object-fit:cover;
-  object-position:top center;
+  position: absolute;
+  top: 0;
+  left: 100%;                /* start from right */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 1s ease-in-out;
 }
 
+.hero-slider img.active {
+  transform: translateX(-100%); /* move left */
+}
+
+.hero-slider img.prev {
+  transform: translateX(-200%); /* exit left */
+}
 /* ===== SLIDER ARROWS ===== */
 .slider-arrow {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.6);
-  color:#fff;
-  border:none;
-  font-size:28px;
-  padding:10px 14px;
-  cursor:pointer;
-  border-radius:50%;
-  z-index:10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
 }
-.slider-arrow.left { left:10px; }
-.slider-arrow.right { right:10px; }
+
+.slider-arrow.left {
+  left: 15px;
+}
+
+.slider-arrow.right {
+  right: 15px;
+}
+
+.slider-arrow:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Hide arrows on small screens (optional) */
+@media (max-width:768px) {
+  .slider-arrow {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 220px;
+  }
+}
+
+.hero-slider img.active {
+  opacity:1;
+}
 
 /* ===== SERVICES ===== */
 .services {
@@ -110,11 +155,13 @@ header {
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
+
 .card {
   background:#f1f5f9;
   padding:20px;
   border-radius:10px;
 }
+
 .card img {
   width:100%;
   height:180px;
@@ -147,116 +194,192 @@ footer {
 .floating {
   position:fixed;
   right:20px;
+  z-index:999;
+  font-weight:bold;
   color:#fff;
   text-decoration:none;
-  padding:12px 20px;
   border-radius:50px;
-  font-weight:bold;
+  padding:12px 20px;
 }
-.whatsapp { bottom:20px; background:#25D366; }
-.call { bottom:80px; background:#0b3c5d; }
-.direction { bottom:140px; background:#4285F4; }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .hero-wrapper{ height:220px; }
-  .services{ grid-template-columns:1fr; }
-  .card img{ height:160px; }
-  .floating{ display:none; }
-  h1{ font-size:24px; }
+.whatsapp { bottom:20px; background:#25D366; }
+.call     { bottom:80px; background:#0b3c5d; }
+.direction{ bottom:140px;background:#4285F4; }
+
+/* ===== MOBILE FIX ===== */
+@media (max-width:768px) {
+
+  section {
+    padding:25px 15px;
+    margin:15px 10px;
+  }
+
+  .services {
+    grid-template-columns:1fr;
+  }
+
+  .card img {
+    height:160px;
+  }
+
+  .hero-slider {
+    height:220px;
+  }
+
+  h1 { font-size:24px; }
+  h2 { font-size:20px; }
+  h3 { font-size:18px; }
+
+  /* hide floating buttons on mobile */
+  .floating {
+    display:none;
+  }
 }
 </style>
+
+<!-- SEO SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Care Guard Solution",
+  "description": "Home nursing, security guard and manpower services in Karnataka",
+  "telephone": "+91XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Su 00:00-23:59"
+}
+</script>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
   <div class="nav-container">
-    <strong>Care Guard Solution</strong>
+    <strong style="font-size:18px;color:#0b3c5d">Care Guard Solution</strong>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about-us.html">About</a>
       <a href="#services">Services</a>
+      <a href="home-nursing.html">Home Nursing</a>
+      <a href="security-guard.html">Security</a>
+      <a href="manpower.html">Manpower</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html" class="contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOATING BUTTONS (DESKTOP) -->
 <a href="https://wa.me/919999999999" class="floating whatsapp">WhatsApp</a>
 <a href="tel:+919999999999" class="floating call">Call</a>
 <a href="https://www.google.com/maps/dir/?api=1&destination=Bangalore"
-   class="floating direction" target="_blank">Directions</a>
+   target="_blank" class="floating direction">Directions</a>
 
 <!-- HEADER -->
 <header>
   <h1>Care Guard Solution</h1>
   <h3>Security, Home Nursing & Manpower Agency</h3>
-  <p>Trusted Guards, Professional Nurses & Skilled Staff</p>
+  <p>Trusted Guards, Professional Nurses & Skilled Staff for Homes & Businesses</p>
+  <!-- SLIDER ARROWS -->
+<button class="slider-arrow left" onclick="prevSlide()">&#10094;</button>
+<button class="slider-arrow right" onclick="nextSlide()">&#10095;</button>
 
-  <!-- SLIDER -->
-  <div class="hero-wrapper">
-    <button class="slider-arrow left" onclick="prevSlide()">&#10094;</button>
-    <button class="slider-arrow right" onclick="nextSlide()">&#10095;</button>
-
-    <div class="hero-slider" id="slider">
-      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80">
-      <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=1200&q=80">
-      <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=1200&q=80">
-      <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=1200&q=80">
-      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80">
-    </div>
+  <!-- IMAGE SLIDER -->
+  <div class="hero-slider">
+    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80" class="active">
+    <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=1200&q=80">
+    <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=1200&q=80">
+    <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=1200&q=80">
+    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80">
   </div>
 
+  <br>
   <a href="contact.html" class="btn">Contact Us</a>
 </header>
 
-<!-- SERVICES -->
-<section id="services">
-<h2>Our Main Services</h2>
-<div class="services">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=800&q=80">
-    <h3>Security Guard Services</h3>
-    <p>Professional guards for apartments, banks and industries.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=800&q=80">
-    <h3>Home Nurse & Patient Care</h3>
-    <p>Certified nurses for elderly and ICU home care.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=800&q=80">
-    <h3>Manpower Supply</h3>
-    <p>Skilled and unskilled manpower for all needs.</p>
-  </div>
-</div>
+<!-- OVERVIEW -->
+<section>
+  <h2>Overview</h2>
+  <p>
+    <strong>Care Guard Solution</strong> offers professional
+    Home Nursing, Security Guard and Manpower services
+    across Bangalore and Mangalore with 24/7 support.
+  </p>
 </section>
 
+<!-- WHY CHOOSE US -->
+<section>
+  <h2>Why Choose Us</h2>
+  <ul>
+    <li>Trained & Verified Staff</li>
+    <li>24/7 Customer Support</li>
+    <li>Affordable Pricing</li>
+    <li>Fast Service Response</li>
+    <li>Trusted by Families & Businesses</li>
+  </ul>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Main Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600359739890-6d9f8f6a7d0a?auto=format&fit=crop&w=800&q=80">
+      <h3>Security Guard Services</h3>
+      <p>Professional security guards for apartments, banks, hospitals and events.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580281657521-6b7c1c1f1c9b?auto=format&fit=crop&w=800&q=80">
+      <h3>Home Nurse & Patient Care</h3>
+      <p>Certified nurses for elderly care, bedridden patients and ICU home care.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596075780750-81249df16d19?auto=format&fit=crop&w=800&q=80">
+      <h3>Manpower Supply & Job Assistance</h3>
+      <p>Skilled & unskilled manpower including helpers, drivers and office staff.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>© 2025 Care Guard Solution | 24/7 Support</p>
+  <p>© 2025 Care Guard Solution – Security, Home Nursing & Manpower Agency</p>
+  <p>Trusted Services Across Karnataka | 24/7 Support</p>
 </footer>
 
 <!-- SLIDER SCRIPT -->
 <script>
-const slider = document.getElementById("slider");
-const totalSlides = slider.children.length;
-let index = 0;
+const slides = document.querySelectorAll('.hero-slider img');
+let current = 0;
 
-function updateSlide() {
-  slider.style.transform = `translateX(-${index * 100}%)`;
+function showSlide(index) {
+  slides.forEach(slide => {
+    slide.classList.remove('active', 'prev');
+  });
+
+  slides[index].classList.add('active');
 }
 
 function nextSlide() {
-  index = (index + 1) % totalSlides;
-  updateSlide();
+  slides[current].classList.add('prev');
+  current = (current + 1) % slides.length;
+  showSlide(current);
 }
 
 function prevSlide() {
-  index = (index - 1 + totalSlides) % totalSlides;
-  updateSlide();
+  slides[current].classList.add('prev');
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
 }
 
 /* Auto slide */
