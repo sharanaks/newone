@@ -15,6 +15,49 @@
     .card { background:#f1f5f9; padding:20px; border-radius:8px; }
     footer { background:#0b3c5d; color:#fff; text-align:center; padding:20px; }
     .btn { display:inline-block; background:#ff9800; color:#fff; padding:10px 20px; border-radius:6px; text-decoration:none; }
+  /* ✅ MOBILE VIEW FIX */
+@media (max-width: 768px) {
+
+  header {
+    padding: 25px 15px;
+  }
+
+  header img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  section {
+    padding: 25px 15px;
+    margin: 15px 10px;
+  }
+
+  .services {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card img {
+    height: 160px;      /* smaller image on mobile */
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+}
   </style>
   <script type="application/ld+json">
   {
