@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | Care Guard Solution</title>
+<meta name="description" content="Contact Care Guard Solution for home nursing, security guard and manpower services in Bangalore & Mangalore. 24/7 support.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f7f7f7;
+}
+section{
+  max-width:1000px;
+  margin:30px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+}
+h1,h2{
+  color:#0b3c5d;
+}
+form{
+  display:grid;
+  gap:15px;
+}
+input, textarea{
+  padding:12px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+button{
+  background:#ff9800;
+  color:#fff;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+.contact-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+.box{
+  background:#f1f5f9;
+  padding:20px;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>Contact Care Guard Solution</h1>
+  <p>
+    Need <strong>Home Nursing, Security Guard, or Manpower Services</strong>?
+    Get in touch with us anytime — we are available <strong>24/7</strong>.
+  </p>
+
+  <h2>Send Us a Message</h2>
+
+  <!-- Contact Form -->
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="email" placeholder="Email Address">
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p style="font-size:14px;color:#555;">
+    *This is a demo form. Email backend can be added anytime.
+  </p>
+
+  <div class="contact-box">
+    <div class="box">
+      <h3>📞 Call Us</h3>
+      <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+    </div>
+
+    <div class="box">
+      <h3>💬 WhatsApp</h3>
+      <p><a href="https://wa.me/919999999999">Chat on WhatsApp</a></p>
+    </div>
+
+    <div class="box">
+      <h3>📧 Email</h3>
+      <p>careguardsolution@gmail.com</p>
+    </div>
+
+    <div class="box">
+      <h3>📍 Service Areas</h3>
+      <p>Bangalore<br>Mangalore<br>Karnataka</p>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/919999999999"
+   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
+   padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold">
+   WhatsApp
+</a>
+
+<a href="tel:+919999999999"
+   style="position:fixed;bottom:80px;right:20px;background:#0b3c5d;color:#fff;
+   padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:bold">
+   Call
+</a>
+
+</body>
+<section id="location">
+  <h2>Our Location & Directions</h2>
+  <p>
+    Visit or reach us easily. We provide services across
+    <strong>Bangalore & Mangalore</strong>.
+  </p>
+
+  <!-- Google Map Embed -->
+  <div style="width:100%;height:350px;border-radius:10px;overflow:hidden">
+    <iframe
+      src="https://www.google.com/maps?q=Bangalore&output=embed"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <br>
+
+  <!-- Direction Button -->
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Bangalore"
+     target="_blank"
+     class="btn">
+     📍 Get Directions
+  </a>
+</section>
+</html>
