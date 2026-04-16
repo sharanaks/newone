@@ -54,7 +54,8 @@ care-guard-solution/
 ## ⚙️ How to Run Locally
 
 1. Download or clone the repository:
-   git clone https://github.com/yourusername/care-guard-solution.git
+git clone https://github.com/yourusername/care-guard-solution.git
+
 
 
 2. Open `index.html` in your browser
