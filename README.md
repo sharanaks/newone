@@ -56,7 +56,7 @@ care-guard-solution/
 
 1. Download or clone the repository:
 
-git clone https://github.com/yourusername/care-guard-solution.git
+git clone https://github.com/sharanaks/newone.git
 
 2. Open index.html in your browser
 
